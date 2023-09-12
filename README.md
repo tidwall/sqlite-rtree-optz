@@ -6,6 +6,8 @@ This repo includes a fork of the Sqlite amalga file with the following optimzati
 - Added a [path hint](https://github.com/tidwall/btree/blob/master/PATH_HINT.md) to track the node path used by the last inserted item. This path is a hint for the next insert, falling back to choosing a candidate using the standard loop-style logic.
 - Disable reinsertions
 
+Here's the [diff](https://github.com/tidwall/sqlite-rtree-optz/commit/04a2aef).
+
 These changes will generally speed up the insertion of bulk data when the data has some order to it, such as with space-filling curves like Hilbert.
 
 To enable use `-DSQLITE_RTREE_OPTZ=1`.
